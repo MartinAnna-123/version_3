@@ -19,6 +19,7 @@ var play = prompt('player1 would you like to roll the dice?')
   }
   else if (play == 'no'){
     console.log('shame')
+    
   }
   else{
     console.log('invalid please re-enter an answer')
@@ -55,6 +56,7 @@ var play = prompt('player2 would you like to roll the dice?')
   }
   else if (play == 'no'){
     console.log('shame')
+    
   }
   else{
     console.log('invalid please re-enter an answer')
@@ -75,8 +77,7 @@ function roll2(){
   } else if (player2GetsSix == 6){
     player2GetsSix ++
     pointPlayer2 = pointPlayer2 + dice[random];
-  }
-  else{
+  } else {
     pointPlayer2 = pointPlayer2 + dice[random];
   }
 }
@@ -86,8 +87,12 @@ var play2 = prompt ('do you want to play again?')
   play();
   } else {
 ending();
-  }
 
+  }
+  while(pointPlayer1 && pointPlayer2 < 20){
+    play();
+  }
+}
 function ending(){
   if(player1GetsSix > player2GetsSix){
     pointPlayer1 + 2
@@ -96,18 +101,22 @@ function ending(){
     }
 if( pointPlayer1 > pointPlayer2 ){
   console.log('player1 wins')
-  console.log('thanks for playing')
   console.log('Player1 points ' + pointPlayer1)
   console.log('Player2 points ' + pointPlayer2)
+  console.log('thanks for playing')
+  
 }else if(pointPlayer1 == pointPlayer2){
   console.log('draw')
-  console.log('thanks for playing')
   console.log('Player1 points ' + pointPlayer1)
   console.log('Player2 points ' + pointPlayer2)
+  console.log('thanks for playing')
+  
 }else{
   console.log('player2 wins')
-  console.log('thanks for playing')
   console.log('Player1 points ' + pointPlayer1)
   console.log('Player2 points ' + pointPlayer2)
-}}
+  console.log('thanks for playing')
+  
 }
+}
+
