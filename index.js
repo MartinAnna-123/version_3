@@ -81,14 +81,17 @@ function roll2(){
     pointPlayer2 = pointPlayer2 + dice[random];
   }
 }
-
+play2Question();
+function play2Question(){
 var play2 = prompt ('do you want to play again?')
   if (play2 == 'yes'){
   play();
-  } else {
+  } else if (play2 == 'no'){
 ending();
-
-  }
+} else {
+  console.log('invalid answer please enter yes or no')
+ play2Question();
+}}
   while(pointPlayer1 && pointPlayer2 < 20){
     play();
   }
@@ -118,5 +121,6 @@ if( pointPlayer1 > pointPlayer2 ){
   console.log('thanks for playing')
   
 }
+
 }
 
