@@ -3,9 +3,16 @@ var pointPlayer1 = 0
 var pointPlayer2 = 0
 var player1GetsSix = 0
 var player2GetsSix = 0
-play();
+let round = 0
 
+
+rounds = prompt('how many rounds do you want to play?')
+if( isNaN(rounds)){
+  console.log('invalid please restart')
+}
+play();
 function play(){
+
 
 // var pointPlayer1 = 0
 // var pointPlayer2 = 0
@@ -94,8 +101,14 @@ ending();
 }}
   while(pointPlayer1 && pointPlayer2 < 20){
     play();
+  } round ++
+  while(round < rounds){
+  play();
   }
-}
+  if(round >= rounds){
+    console.log('end of rounds')
+    ending();
+  }}
 function ending(){
   if(player1GetsSix > player2GetsSix){
     pointPlayer1 + 2
